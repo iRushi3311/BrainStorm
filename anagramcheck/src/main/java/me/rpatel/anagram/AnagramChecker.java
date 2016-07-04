@@ -1,12 +1,8 @@
 package me.rpatel.anagram;
 
-import org.springframework.util.StringUtils;
-
-import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.function.Function;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 /**
@@ -30,14 +26,16 @@ public class AnagramChecker {
      * @return boolean - if both strings are anagram - returns TRUE, else function returns FALSE
      */
     static boolean isAnagram(String string1, String string2) {
-        
+
         if(string1.length() == string2.length()) {
 
             Map<Character, Long> charMap = string1
+                                                .toLowerCase()
                                                 .chars().mapToObj(i -> (char)i)
                                                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
             Map<Character, Long> charMap2 = string2
+                                                .toLowerCase()
                                                 .chars().mapToObj(i -> (char)i)
                                                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 

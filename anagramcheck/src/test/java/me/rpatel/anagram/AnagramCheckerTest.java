@@ -16,6 +16,12 @@ public class AnagramCheckerTest {
     }
 
     @Test
+    public void testCaseDiffIsAnagram() {
+        boolean result = AnagramChecker.isAnagram("ABCDEF","abCDEF");
+        Assert.assertTrue("Should detect as an anagram",result);
+    }
+
+    @Test
     public void testIsAnagram2() {
         boolean result = AnagramChecker.isAnagram("CAT","TAC");
         Assert.assertTrue("Should detect as an anagram",result);
