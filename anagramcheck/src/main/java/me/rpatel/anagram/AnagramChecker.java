@@ -30,7 +30,7 @@ public class AnagramChecker {
      * @return boolean - if both strings are anagram - returns TRUE, else function returns FALSE
      */
     static boolean isAnagram(String string1, String string2) {
-        // Complete the function by writing your code here.
+        
         if(string1.length() == string2.length()) {
 
             Map<Character, Long> charMap = string1
